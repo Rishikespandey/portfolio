@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* --- Typing Animation (Hero Section) --- */
     const typingElement = document.querySelector('.typing');
-    const roles = ["Frontend Developer", "Problem Solver", "DSA Enthusiast"];
+    const roles = ["FullStack Developer", "Problem Solver", "DSA Enthusiast"];
     let roleIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
