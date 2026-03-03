@@ -1,386 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Rishikesh Pandey | Full Stack Developer</title>
-
-<!-- CSS -->
-<link rel="stylesheet" href="style.css">
-
-<!-- ThreeJS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rishikesh Pandey | Developer Portfolio</title>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Unicons for Icons -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
 </head>
-
-
 <body>
-    <!-- 3D BACKGROUND -->
-
-<div id="bg3d"></div>
-
-
-<!-- NAVBAR -->
-
-<nav>
-
-<a href="#home">Home</a>
-
-<a href="#about">About</a>
-
-<a href="#skills">Skills</a>
-
-<a href="#projects">Projects</a>
-
-<a href="#contact">Contact</a>
-
-</nav>
-
-
-
-<!-- HERO SECTION -->
-
-<section id="home" class="hero">
-
-
-<div class="hero-left">
-
-<h1>
-
-Hi I'm
-
-<br>
-
-<span>Rishikesh Pandey</span>
-
-</h1>
-
-
-<p class="typing">
-
-</p>
-
-
-<a href="#projects">
-<button class="btn">
-View Projects
-</button>
-</a>
-
-
-</div>
-
-
-
-<div class="hero-right">
-
-<img src="images/profile.jpg" class="profile-img">
-
-</div>
-
-
-
-</section>
-
-
-
-
-<!-- ABOUT -->
-
-<section id="about">
-
-<h1>About Me</h1>
-
-<p class="about-text">
-
-I am an MCA student and an aspiring Software Engineer / Frontend Developer with strong fundamentals in Java and Data Structures & Algorithms. I am a quick learner and always eager to explore new technologies and improve my skills through real-world projects.
-
-<br><br>
-
-🔹 Major Project: Health Monitoring System
-
-I built a Health Monitoring System that collects real-time health data such as heart rate, body temperature, and SpO2 using sensors and sends it through ESP8266/ESP32 to a web-based dashboard. The dashboard displays live readings and also stores data for historical tracking and analysis.
-
-<br><br>
-
-🔹 Web Development Projects
-
-I have also developed multiple web projects, including:
-
-<br>
-
-BookMyShow Frontend Clone  
-Emoji Picker  
-Chat Box Application  
-Save the Date (with time tracking for actions)
-
-<br><br>
-
-I am actively looking for opportunities where I can contribute, learn, and grow as a developer.
-
-</p>
-
-</section>
-
-
-
-
-<!-- SKILLS -->
-
-<section id="skills">
-
-<h1>My Skills</h1>
-
-
-<div class="card-container">
-
-<div class="card">Java</div>
-
-<div class="card">Data Structures</div>
-
-<div class="card">HTML</div>
-
-<div class="card">CSS</div>
-
-<div class="card">JavaScript</div>
-
-<div class="card">Node.js</div>
-
-<div class="card">Express.js</div>
-
-<div class="card">MongoDB</div>
-
-<div class="card">Cloud Computing</div>
-
-
-</div>
-
-
-</section>
-
-
-
-
-<!-- PROJECTS -->
-
-<section id="projects">
-
-<h1>Projects</h1>
-
-<div class="card-container">
-
-<!--project 1-->
-
-<div class="card">
-
- <img src="images/health.png" class="project-img">
-
-<h3><b>🏥 Health Monitoring System</b></h3>
-
-<p>
-
-Project Overview<br><br>
-
-The Health Monitoring System is an IoT-based web application that collects real-time patient health data using hardware sensors and displays it on a web dashboard for monitoring and analysis.
-
-<br><br>
-
-<b>Tech Stack</b><br>
-
-Hardware: Arduino, Pulse Sensor, Temperature Sensor, O2 Sensor, ESP8266/ESP32<br>
-
-Frontend: HTML, CSS, JavaScript<br>
-
-Backend: Node.js / PHP<br>
-
-Database: MongoDB / MySQL
-
-<br><br>
-
-<b>Features</b><br>
-
-* Real-time heart rate monitoring<br>
-* Temperature tracking<br>
-* Oxygen level monitoring<br>
-* Dashboard visualization<br>
-* Alert system
-
-</p>
-
-</div>
-
-
-
-<div class="card">
- 
-<img src="images/chat.png" class="project-img">    
-
-<h3><b>💬 Real-Time Chat Application</b></h3>
-
-<p>
-
-Project Overview<br><br>
-
-A real-time chat application built using WebSocket technology for instant communication.
-
-<br><br>
-
-<b>Tech Stack</b><br>
-
-HTML, CSS, JavaScript<br>
-Node.js, Express.js<br>
-Socket.io<br>
-MongoDB
-
-<br><br>
-
-<b>Features</b><br>
-
-* Real-time messaging<br>
-* Multiple users<br>
-* Join/Leave notifications<br>
-* Message timestamps
-
-</p>
-
-</div>
-
-
-
-<div class="card">
-
-<img src="images/emoji.png" class="project-img">    
-
-<h3><b>😊 Emoji Picker Component</b></h3>
-
-<p>
-
-Project Overview<br><br>
-
-A reusable emoji picker component that allows users to select emojis into input fields.
-
-<br><br>
-
-<b>Tech Stack</b><br>
-
-HTML<br>
-CSS<br>
-JavaScript
-
-<br><br>
-
-<b>Features</b><br>
-
-* Emoji search<br>
-* Category filter<br>
-* Cursor insertion<br>
-* Responsive design
-
-</p>
-
-</div>
-
-
-</div>
-
-
-
-<p class="project-text">
-
-These projects demonstrate my ability to design, develop, and integrate full-stack applications, handle real-time communication, and build scalable system architectures.
-
-</p>
-
-</section>
-
-
-
-
-
-<!-- CONTACT -->
-<section id="contact">
-
-<h1>📞 Contact Me</h1>
-
-<div class="card-container">
-
-
-<div class="card">
-
-<h3>📧 Email</h3>
-
-<p>
-<a href="mailto:sonupandey5705@gmail.com">
-sonupandey5705@gmail.com
-</a>
-</p>
-
-</div>
-
-
-
-<div class="card">
-
-<h3>📱 Phone</h3>
-
-<p>
-<a href="tel:+917972574076">
-+91 7972574076
-</a>
-</p>
-
-</div>
-
-
-
-<div class="card">
-
-<h3>🔗 LinkedIn</h3>
-
-<p>
-
-<a href="https://www.linkedin.com/in/rishikesh-pandey-9b442b2b3" target="_blank">
-
-Visit Profile
-
-</a>
-
-</p>
-
-</div>
-
-
-
-<div class="card">
-
-<h3>💻 GitHub</h3>
-
-<p>
-
-<a href="https://github.com/Rishikespandey" target="_blank">
-
-View Projects
-
-</a>
-
-</p>
-
-</div>
-
-
-
-</div>
-
-</section>
-
-
-
-<script src="script.js"></script>
-
-
+    
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-circle"></div>
+    </div>
+
+    <!-- 3D Canvas Background -->
+    <canvas id="bg3d"></canvas>
+    <div class="glow-bg"></div>
+
+    <!-- Sticky Navbar -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">Rishikesh<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="menu-toggle"><i class="uil uil-bars"></i></div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        
+        <!-- HERO SECTION -->
+        <section id="home" class="hero sect-view">
+            <div class="hero-content">
+                <span class="greeting slide-up">Welcome to my universe</span>
+                <h1 class="slide-up">Hi, I'm <br><span class="gradient-text">Rishikesh Pandey</span></h1>
+                <h2 class="typing-text slide-up"><span class="typing"></span><span class="cursor">|</span></h2>
+                <div class="hero-btns slide-up">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                </div>
+            </div>
+            <div class="scroll-indicator fade-in">
+                <a href="#about">
+                    <div class="mouse"></div>
+                    <p>Scroll Down</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="sect-view">
+            <div class="section-header fade-in">
+                <h2>About Me</h2>
+                <div class="separator"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-image-wrapper fade-in-left">
+                    <div class="img-border">
+                        <img src="images/profile.jpg" alt="Rishikesh Pandey" class="profile-img">
+                    </div>
+                    <div class="glass-float-card card-1"><i class="uil uil-react"></i> <span>Frontend</span></div>
+                    <div class="glass-float-card card-2"><i class="uil uil-server"></i> <span>Backend</span></div>
+                </div>
+                <div class="about-text-wrapper glass-card fade-in-right">
+                    <p>
+                        I am an MCA student and an aspiring <strong>Software Engineer / Frontend Developer</strong> with strong fundamentals in Java and Data Structures & Algorithms. I am a quick learner and always eager to explore new technologies and improve my skills through real-world projects.
+                    </p>
+                    <div class="milestones">
+                        <div class="milestone">
+                            <h3><i class="uil uil-heart-medical"></i> Health Monitoring</h3>
+                            <p>IoT system tracking real-time vitals using ESP32 & Node.js.</p>
+                        </div>
+                        <div class="milestone">
+                            <h3><i class="uil uil-arrow"></i> Web Development</h3>
+                            <p>Built Chat Apps, UI Clones, and Full-Stack scalable solutions.</p>
+                        </div>
+                    </div>
+                    <a href="#contact" class="link-arrow">Let's work together <i class="uil uil-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section id="skills" class="sect-view">
+            <div class="section-header fade-in">
+                <h2>My Skills</h2>
+                <div class="separator"></div>
+            </div>
+            <div class="skills-container fade-in-up">
+                <!-- Skill Chips -->
+                <div class="skill-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"> Java</div>
+                <div class="skill-chip"><i class="uil uil-brackets-curly"></i> DSA</div>
+                <div class="skill-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML"> HTML5</div>
+                <div class="skill-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS"> CSS3</div>
+                <div class="skill-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS"> JavaScript</div>
+                <div class="skill-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"> Node.js</div>
+                <div class="skill-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express" class="filter-white"> Express.js</div>
+                <div class="skill-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB"> MongoDB</div>
+                <div class="skill-chip"><i class="uil uil-cloud"></i> Cloud Computing</div>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section id="projects" class="sect-view">
+            <div class="section-header fade-in">
+                <h2>Featured Projects</h2>
+                <div class="separator"></div>
+            </div>
+            <div class="projects-grid">
+                
+                <!-- Project 1 -->
+                <div class="project-card glass-card fade-in-up" data-delay="0.1s">
+                    <div class="project-img-container">
+                        <img src="images/health.png" alt="Health Monitoring System" class="p-img">
+                        <div class="project-overlay">
+                            <div class="overlay-links">
+                                <a href="#" class="icon-link tooltip" data-tooltip="Live Demo"><i class="uil uil-external-link-alt"></i></a>
+                                <a href="https://github.com/Rishikespandey" class="icon-link tooltip" data-tooltip="Source Code"><i class="uil uil-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>🏥 Health Monitoring System</h3>
+                        <p>IoT-based application collecting real-time patient health data using hardware sensors and displaying it on a web dashboard.</p>
+                        <div class="tags">
+                            <span>IoT</span><span>Node.js</span><span>MongoDB</span><span>ESP32</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card glass-card fade-in-up" data-delay="0.2s">
+                    <div class="project-img-container">
+                        <img src="images/chat.png" alt="Real-Time Chat App" class="p-img">
+                        <div class="project-overlay">
+                            <div class="overlay-links">
+                                <a href="#" class="icon-link tooltip" data-tooltip="Live Demo"><i class="uil uil-external-link-alt"></i></a>
+                                <a href="https://github.com/Rishikespandey" class="icon-link tooltip" data-tooltip="Source Code"><i class="uil uil-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>💬 Real-Time Chat App</h3>
+                        <p>A real-time chat application built using WebSocket technology (Socket.io) for instant and multi-user communication.</p>
+                        <div class="tags">
+                            <span>JavaScript</span><span>Socket.io</span><span>Express.js</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card glass-card fade-in-up" data-delay="0.3s">
+                    <div class="project-img-container">
+                        <img src="images/emoji.png" alt="Emoji Picker Component" class="p-img">
+                        <div class="project-overlay">
+                            <div class="overlay-links">
+                                <a href="#" class="icon-link tooltip" data-tooltip="Live Demo"><i class="uil uil-external-link-alt"></i></a>
+                                <a href="https://github.com/Rishikespandey" class="icon-link tooltip" data-tooltip="Source Code"><i class="uil uil-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>😊 Emoji Picker Component</h3>
+                        <p>A reusable, lightweight emoji picker UI component featuring global search, categorized filtering, and text cursor insertion.</p>
+                        <div class="tags">
+                            <span>Vanilla JS</span><span>CSS3</span><span>HTML5</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="sect-view">
+            <div class="section-header fade-in">
+                <h2>Get In Touch</h2>
+                <div class="separator"></div>
+                <p class="subtitle">I'm currently looking for new opportunities. My inbox is always open!</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info glass-card fade-in-left">
+                    <h3>Contact Information</h3>
+                    <div class="info-item">
+                        <div class="icon-box"><i class="uil uil-envelope-alt"></i></div>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:sonupandey5705@gmail.com">sonupandey5705@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="icon-box"><i class="uil uil-phone"></i></div>
+                        <div>
+                            <h4>Phone</h4>
+                            <a href="tel:+917972574076">+91 7972574076</a>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/Rishikespandey" target="_blank" class="social-icon"><i class="uil uil-github"></i></a>
+                        <a href="https://www.linkedin.com/in/rishikesh-pandey-9b442b2b3" target="_blank" class="social-icon"><i class="uil uil-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-form glass-card fade-in-right">
+                    <form id="portfolio-form" novalidate>
+                        <div class="input-group">
+                            <input type="text" id="name" required placeholder=" ">
+                            <label for="name">Your Name</label>
+                            <span class="error-text">Please enter your name</span>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" id="email" required placeholder=" ">
+                            <label for="email">Your Email</label>
+                            <span class="error-text">Please enter a valid email address</span>
+                        </div>
+                        <div class="input-group">
+                            <textarea id="message" rows="5" required placeholder=" "></textarea>
+                            <label for="message">Your Message</label>
+                            <span class="error-text">Please enter your message</span>
+                        </div>
+                        <button type="submit" class="btn btn-primary submit-btn">
+                            <span>Send Message</span>
+                            <i class="uil uil-message"></i>
+                        </button>
+                    </form>
+                    <div class="success-msg" id="success-message">
+                        <i class="uil uil-check-circle"></i>
+                        <p>Message sent successfully!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Built by <span>Rishikesh Pandey</span> &copy; <span id="year"></span></p>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#home" class="scroll-up" id="scroll-up">
+        <i class="uil uil-arrow-up"></i>
+    </a>
+
+    <!-- Scripts -->
+    <!-- ThreeJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
 </body>
-
 </html>
