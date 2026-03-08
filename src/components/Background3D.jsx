@@ -33,7 +33,7 @@ const Background3D = () => {
 
     const material = new THREE.PointsMaterial({
       size: 0.015,
-      color: 0xff6b00, // Vibrant Orange
+      color: 0x9333ea, // Vibrant Purple
       transparent: true,
       opacity: 0.8,
       blending: THREE.AdditiveBlending

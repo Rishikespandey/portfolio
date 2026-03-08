@@ -5,7 +5,7 @@
 
 @layer base {
     body {
-        @apply bg-[#0f0f11] text-gray-200 overflow-x-hidden font-sans m-0 p-0;
+        @apply bg-bgPrimary text-textPrimary overflow-x-hidden font-sans m-0 p-0;
     }
 
     html {
@@ -18,15 +18,15 @@
     }
 
     ::-webkit-scrollbar-track {
-        @apply bg-[#0f0f11];
+        @apply bg-bgPrimary;
     }
 
     ::-webkit-scrollbar-thumb {
-        @apply bg-gray-700 rounded-full;
+        @apply bg-[#2d2d44] rounded-full;
     }
 
     ::-webkit-scrollbar-thumb:hover {
-        @apply bg-[#ff6b00];
+        @apply bg-accent;
     }
 }
 

@@ -1,81 +1,116 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { ArrowRight, Download, ChevronDown, Github, Linkedin, Mail } from 'lucide-react';
+import { useTyping } from '../hooks/useTyping';
 
 const Hero = () => {
-  const roles = ["FullStack Developer", "Problem Solver", "DSA Enthusiast"];
-  const [currentText, setCurrentText] = useState("");
-  const [roleIndex, setRoleIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [typingSpeed, setTypingSpeed] = useState(100);
-
-  useEffect(() => {
-    let timer;
-    const handleTyping = () => {
-      const currentRole = roles[roleIndex];
-      
-      if (isDeleting) {
-        setCurrentText(currentRole.substring(0, currentText.length - 1));
-        setTypingSpeed(50);
-      } else {
-        setCurrentText(currentRole.substring(0, currentText.length + 1));
-        setTypingSpeed(100);
-      }
-
-      if (!isDeleting && currentText === currentRole) {
-        setTypingSpeed(2000);
-        setIsDeleting(true);
-      } else if (isDeleting && currentText === "") {
-        setIsDeleting(false);
-        setRoleIndex((prev) => (prev + 1) % roles.length);
-        setTypingSpeed(500);
-      }
-    };
-
-    timer = setTimeout(handleTyping, typingSpeed);
-    return () => clearTimeout(timer);
-  }, [currentText, isDeleting, roleIndex, typingSpeed, roles]);
+  const roles = [
+    "Frontend Developer",
+    "React Developer",
+    "UI Enthusiast",
+    "Open Source Learner"
+  ];
+  
+  const currentText = useTyping(roles, 100, 2000);
 
   return (
-    <section id="home" className="flex flex-col justify-center min-h-screen items-center text-center pt-[120px] px-[10%] relative">
-      <div className="z-10">
-        <span className="inline-block py-1.5 px-4 bg-[#ff6b00]/10 border border-[#ff6b00]/20 rounded-full text-[#ff6b00] text-[0.9rem] font-semibold mb-8 tracking-[1px] uppercase animate-[fadeInUp_0.6s_ease-out]">
+    <section id="home" className="relative min-h-screen flex flex-col justify-center items-center text-center px-6 lg:px-12 pt-20 overflow-hidden">
+      
+      {/* Main Content */}
+      <div className="z-10 max-w-4xl mx-auto flex flex-col items-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="inline-flex items-center gap-2 py-1.5 px-4 bg-accent/10 border border-accent/20 rounded-full text-accent text-sm font-semibold mb-8 tracking-wider uppercase backdrop-blur-sm"
+        >
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+          </span>
           Welcome to my universe
-        </span>
-        <h1 className="text-[clamp(3rem,6vw,5rem)] tracking-tight mb-4 font-bold leading-tight animate-[fadeInUp_0.6s_ease-out_0.1s_both]">
+        </motion.div>
+
+        <motion.h1 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+          className="text-5xl md:text-7xl lg:text-8xl tracking-tight font-extrabold leading-tight mb-6 text-textPrimary"
+        >
           Hi, I'm <br />
-          <span className="bg-gradient-to-br from-[#ff6b00] to-[#ff8c00] bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-accent to-accentLight bg-clip-text text-transparent">
             Rishikesh Pandey
           </span>
-        </h1>
-        <h2 className="text-[clamp(1.2rem,3vw,2rem)] text-gray-400 font-normal h-[48px] mb-12 animate-[fadeInUp_0.6s_ease-out_0.2s_both]">
-          <span className="typing">{currentText}</span>
-          <span className="text-[#ff6b00] animate-pulse">|</span>
-        </h2>
-        <div className="flex gap-6 justify-center animate-[fadeInUp_0.6s_ease-out_0.3s_both]">
+        </motion.h1>
+
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+          className="h-12 md:h-16 flex items-center justify-center mb-10"
+        >
+          <h2 className="text-xl md:text-2xl lg:text-3xl text-textMuted font-medium tracking-wide">
+            <span className="mr-1">{currentText}</span>
+            <span className="text-accent animate-pulse">|</span>
+          </h2>
+        </motion.div>
+
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+          className="flex flex-col sm:flex-row gap-5 justify-center w-full sm:w-auto"
+        >
           <a
             href="#projects"
-            className="inline-flex items-center justify-center gap-2 py-3 px-8 rounded-full font-semibold text-[0.95rem] transition-all duration-300 bg-gradient-to-br from-[#ff6b00] to-[#ff8c00] text-white shadow-[0_4px_15px_rgba(255,107,0,0.3)] hover:-translate-y-1 hover:shadow-[0_8px_25px_rgba(255,107,0,0.5)] hover:brightness-110 active:scale-95"
+            className="group flex items-center justify-center gap-2 py-4 px-8 rounded-full font-semibold text-white bg-accent hover:bg-accentLight transition-all duration-300 shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:shadow-[0_0_30px_rgba(167,139,250,0.5)] hover:-translate-y-1 w-full sm:w-auto"
           >
             View Projects
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </a>
+          
           <a
             href="/assets/Rishikesh_Pandey_CV.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 py-3 px-8 rounded-full font-semibold text-[0.95rem] transition-all duration-300 bg-white/5 backdrop-blur-md border border-white/10 text-white hover:border-white/20 hover:-translate-y-1 hover:shadow-[0_4px_15px_rgba(255,107,0,0.3)] active:scale-95 group overflow-hidden relative"
+            className="group flex items-center justify-center gap-2 py-4 px-8 rounded-full font-semibold text-textPrimary bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:-translate-y-1 backdrop-blur-sm w-full sm:w-auto"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-[#ff6b00] to-[#ff8c00] opacity-0 group-hover:opacity-10 transition-opacity duration-300 pointer-events-none"></div>
-            <span>Download CV</span> <i className="uil uil-arrow-down"></i>
+            Download Resume
+            <Download className="w-5 h-5 group-hover:-translate-y-1 transition-transform" />
           </a>
-        </div>
+        </motion.div>
+
+        {/* Social Icons */}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="flex gap-6 mt-16"
+        >
+          <a href="https://github.com/Rishikespandey" target="_blank" rel="noopener noreferrer" className="text-textMuted hover:text-accent transition-colors hover:scale-110 transform duration-300">
+            <Github className="w-6 h-6" />
+          </a>
+          <a href="https://www.linkedin.com/in/rishikesh-pandey-9b442b2b3" target="_blank" rel="noopener noreferrer" className="text-textMuted hover:text-accent transition-colors hover:scale-110 transform duration-300">
+            <Linkedin className="w-6 h-6" />
+          </a>
+          <a href="mailto:sonupandey5705@gmail.com" className="text-textMuted hover:text-accent transition-colors hover:scale-110 transform duration-300">
+            <Mail className="w-6 h-6" />
+          </a>
+        </motion.div>
       </div>
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-60 hover:opacity-100 transition-opacity duration-200 animate-[fadeIn_0.8s_ease-out_1s_both]">
-        <a href="#about" className="flex flex-col items-center">
-          <div className="w-6 h-9 border-2 border-gray-400 rounded-full relative cursor-pointer active:scale-90 flex justify-center pt-[6px]">
-            <div className="w-1 h-1.5 bg-gray-400 rounded-sm animate-[bounce_2s_infinite]"></div>
-          </div>
-          <p className="text-[0.8rem] uppercase tracking-[1px] mt-2 text-gray-400">Scroll Down</p>
+
+      {/* Scroll indicator */}
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-textMuted hover:text-accent transition-colors"
+      >
+        <a href="#about" className="flex flex-col items-center animate-bounce">
+          <span className="text-xs uppercase tracking-[0.2em] font-medium mb-2">Scroll</span>
+          <ChevronDown className="w-6 h-6" />
         </a>
-      </div>
+      </motion.div>
     </section>
   );
 };

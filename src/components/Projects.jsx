@@ -1,110 +1,123 @@
-import React from 'react';
-import healthImg from '../assets/images/health.png';
-import chatImg from '../assets/images/chat.png';
-import emojiImg from '../assets/images/emoji.png';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ExternalLink, Github, Eye } from 'lucide-react';
+import { PROJECTS } from '../data/projects';
+import ProjectModal from './ProjectModal';
 
 const Projects = () => {
-  const handleMouseMove = (e, cardRef) => {
-    if (!cardRef.current) return;
-    const card = cardRef.current;
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    
-    const rotateX = ((y - centerY) / centerY) * -10; 
-    const rotateY = ((x - centerX) / centerX) * 10;
-    
-    card.style.transform = `perspective(1000px) scale(1.02) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-  };
+  const [selectedProject, setSelectedProject] = useState(null);
 
-  const handleMouseLeave = (cardRef) => {
-    if (!cardRef.current) return;
-    const card = cardRef.current;
-    card.style.transform = `perspective(1000px) scale(1) rotateX(0deg) rotateY(0deg)`;
-    card.style.transition = 'transform 0.5s ease';
-  };
-
-  const handleMouseEnter = (cardRef) => {
-    if (!cardRef.current) return;
-    const card = cardRef.current;
-    card.style.transition = 'none';
-  };
-
-  const projectList = [
-    {
-      title: "🏥 Health Monitoring System",
-      desc: "IoT-based application collecting real-time patient health data using hardware sensors and displaying it on a web dashboard.",
-      tags: ["IoT", "Node.js", "MongoDB", "ESP32"],
-      img: healthImg,
-      live: "#",
-      repo: "https://github.com/Rishikespandey",
-    },
-    {
-      title: "💬 Real-Time Chat App",
-      desc: "A real-time chat application built using WebSocket technology (Socket.io) for instant and multi-user communication.",
-      tags: ["JavaScript", "Socket.io", "Express.js"],
-      img: chatImg,
-      live: "#",
-      repo: "https://github.com/Rishikespandey",
-    },
-    {
-      title: "😊 Emoji Picker Component",
-      desc: "A reusable, lightweight emoji picker UI component featuring global search, categorized filtering, and text cursor insertion.",
-      tags: ["Vanilla JS", "CSS3", "HTML5"],
-      img: emojiImg,
-      live: "#",
-      repo: "https://github.com/Rishikespandey",
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.15 }
     }
-  ];
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
 
   return (
-    <section id="projects" className="py-24 px-[10%] relative z-10">
-      <div className="mb-16 text-center animate-[fadeInUp_0.8s_ease-out]">
-        <h2 className="text-3xl md:text-4xl font-extrabold mb-4 tracking-tight">Featured Projects</h2>
-        <div className="w-16 h-1.5 bg-gradient-to-r from-[#ff6b00] to-[#ff8c00] mx-auto rounded-full"></div>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 perspective-1000">
-        {projectList.map((project, index) => {
-          const cardRef = React.useRef(null);
-          return (
-            <div 
+    <section id="projects" className="py-24 relative z-10 bg-bgPrimary/50">
+      <div className="container mx-auto px-6 lg:px-12">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-16 text-center"
+        >
+          <h2 className="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight text-textPrimary">Featured Projects</h2>
+          <div className="w-16 h-1.5 bg-gradient-to-r from-accent to-accentLight mx-auto rounded-full"></div>
+          <p className="mt-6 text-textMuted max-w-2xl mx-auto">
+            Some of my recent work. Click on a project to see more details.
+          </p>
+        </motion.div>
+
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 lg:grid-cols-2 lg:gap-12 gap-10"
+        >
+          {PROJECTS.map((project, index) => (
+            <motion.div
               key={index}
-              className="group relative bg-[#1a1a1d]/60 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden transition-all duration-500 shadow-xl animate-[fadeInUp_0.8s_ease-out_both] transform-style-3d will-change-transform" 
-              style={{ animationDelay: `${index * 0.1}s` }}
-              ref={cardRef}
-              onMouseMove={(e) => handleMouseMove(e, cardRef)}
-              onMouseLeave={() => handleMouseLeave(cardRef)}
-              onMouseEnter={() => handleMouseEnter(cardRef)}
+              variants={itemVariants}
+              whileHover={{ y: -8 }}
+              className="group relative bg-cardBg rounded-3xl overflow-hidden border border-white/5 shadow-xl hover:border-accent/40 hover:shadow-[0_20px_40px_-15px_rgba(139,92,246,0.2)] transition-all duration-500"
             >
-              <div className="relative w-full aspect-video overflow-hidden">
-                <img src={project.img} alt={project.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex justify-center items-center backdrop-blur-[2px]">
-                  <div className="flex gap-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                    <a href={project.live} className="w-12 h-12 rounded-full bg-white/10 text-white flex justify-center items-center text-xl hover:bg-[#ff6b00] hover:scale-110 transition-all duration-300" title="Live Demo">
-                      <i className="uil uil-external-link-alt"></i>
-                    </a>
-                    <a href={project.repo} className="w-12 h-12 rounded-full bg-white/10 text-white flex justify-center items-center text-xl hover:bg-[#ff6b00] hover:scale-110 transition-all duration-300" title="Source Code">
-                      <i className="uil uil-github"></i>
-                    </a>
+              <div 
+                className="relative h-64 sm:h-80 overflow-hidden cursor-pointer"
+                onClick={() => setSelectedProject(project)}
+              >
+                <div className="absolute inset-0 bg-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-center justify-center backdrop-blur-[2px]">
+                  <span className="bg-black/60 text-white px-6 py-3 rounded-full font-semibold flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                    <Eye className="w-5 h-5" /> View Details
+                  </span>
+                </div>
+                <img
+                  src={project.img}
+                  alt={project.title}
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+
+              <div className="p-8">
+                <div className="flex justify-between items-start mb-4">
+                  <h3 className="text-2xl text-white font-bold group-hover:text-accent transition-colors duration-300">
+                    {project.title}
+                  </h3>
+                  <div className="flex gap-3">
+                    {project.repo !== "#" && (
+                      <a href={project.repo} target="_blank" rel="noopener noreferrer" className="text-textMuted hover:text-white transition-colors" title="Source Code">
+                        <Github className="w-5 h-5" />
+                      </a>
+                    )}
+                    {project.live !== "#" && (
+                      <a href={project.live} target="_blank" rel="noopener noreferrer" className="text-textMuted hover:text-accent transition-colors" title="Live Demo">
+                        <ExternalLink className="w-5 h-5" />
+                      </a>
+                    )}
                   </div>
                 </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl text-white font-bold mb-3 group-hover:text-[#ff6b00] transition-colors duration-300">{project.title}</h3>
-                <p className="text-sm text-gray-400 mb-6 line-clamp-3 leading-relaxed">{project.desc}</p>
+
+                <p className="text-textMuted text-sm mb-6 line-clamp-2">
+                  {project.desc}
+                </p>
+
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag, i) => (
-                    <span key={i} className="px-3 py-1 bg-white/5 text-[#ff6b00] text-xs font-semibold rounded-full border border-[#ff6b00]/20">{tag}</span>
+                    <span
+                      key={i}
+                      className="px-3 py-1 bg-white/5 text-textMuted border border-white/10 text-xs font-medium rounded-full"
+                    >
+                      {tag}
+                    </span>
                   ))}
                 </div>
               </div>
-            </div>
-          );
-        })}
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
+
+      <AnimatePresence>
+        {selectedProject && (
+          <ProjectModal 
+            project={selectedProject} 
+            onClose={() => setSelectedProject(null)} 
+          />
+        )}
+      </AnimatePresence>
     </section>
   );
 };
