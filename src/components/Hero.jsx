@@ -70,7 +70,7 @@ const Hero = () => {
           </a>
           
           <a
-            href="/assets/Rishikesh_Pandey_CV.pdf"
+            href="/Rishikesh_Pandey_CV.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="group flex items-center justify-center gap-2 py-4 px-8 rounded-full font-semibold text-textPrimary bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:-translate-y-1 backdrop-blur-sm w-full sm:w-auto"
