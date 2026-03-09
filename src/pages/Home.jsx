@@ -19,13 +19,13 @@ const Home = () => {
     <HelmetProvider>
       <div className="relative min-h-screen bg-bgPrimary overflow-hidden">
         <Helmet>
-          <title>Harsh Shukla | Frontend Developer</title>
+          <title>Rishikesh Pandey | FullStack Developer</title>
           <meta name="description" content="Frontend Developer specializing in React, UI engineering and modern web applications." />
-          <meta property="og:title" content="Harsh Shukla Portfolio" />
+          <meta property="og:title" content="Rishikesh Pandey Portfolio" />
           <meta property="og:description" content="Modern React developer portfolio with projects and UI experiments." />
           <meta property="og:image" content="/preview.png" />
           <meta property="og:type" content="website" />
-          <meta property="og:url" content="https://harshshukla.dev" />
+          <meta property="og:url" content="https://rishikeshpandey.dev" />
         </Helmet>
         
         <Navbar />

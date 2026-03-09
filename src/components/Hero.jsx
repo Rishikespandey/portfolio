@@ -104,7 +104,7 @@ const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-textMuted hover:text-accent transition-colors"
+        className="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-textMuted hover:text-accent transition-colors"
       >
         <a href="#about" className="flex flex-col items-center animate-bounce">
           <span className="text-xs uppercase tracking-[0.2em] font-medium mb-2">Scroll</span>

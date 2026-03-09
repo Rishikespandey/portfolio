@@ -6,14 +6,14 @@ const ProjectModal = ({ project, onClose }) => {
   if (!project) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex justify-center items-center px-4 py-8">
+    <div className="fixed  top-20  inset-0 z-[100] flex justify-center items-center px-8 py-12">
       {/* Backdrop */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         onClick={onClose}
-        className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+        className="absolute inset-0 p-20 bg-black/60 backdrop-blur-sm"
       />
 
       {/* Modal Content */}
@@ -22,11 +22,11 @@ const ProjectModal = ({ project, onClose }) => {
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.95, y: 20 }}
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
-        className="relative w-full max-w-4xl max-h-[90vh] bg-cardBg rounded-3xl border border-white/10 shadow-2xl overflow-hidden flex flex-col pointer-events-auto z-10"
+        className="relative   w-full max-w-4xl max-h-[90vh] bg-cardBg rounded-3xl border border-white/10 shadow-2xl overflow-hidden flex flex-col pointer-events-auto z-10"
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-20 p-2 bg-black/50 hover:bg-black/80 text-white rounded-full backdrop-blur-sm transition-colors"
+          className="absolute top-8 right-4 z-20 p-2 bg-black/50 hover:bg-black/80 text-white rounded-full backdrop-blur-sm transition-colors"
         >
           <X className="w-5 h-5" />
         </button>
