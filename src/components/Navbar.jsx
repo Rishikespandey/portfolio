@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Download } from "lucide-react";
 import { useScrollProgress } from "../hooks/useScrollProgress";
 import { useActiveSection } from "../hooks/useActiveSection";
+import { useTheme } from "../hooks/useTheme";
 import ThemeToggle from "./ThemeToggle";
 
 const navItems = ["home", "about", "skills", "projects", "contact"];
@@ -12,6 +13,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const scrollProgress = useScrollProgress();
   const activeSection = useActiveSection(navItems);
+  const { isDark, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -73,7 +75,7 @@ const Navbar = () => {
             <div className="w-px h-6 bg-white/10"></div>
 
             <div className="flex items-center gap-4">
-              <ThemeToggle isDark={true} toggleTheme={() => {}} />
+              <ThemeToggle isDark={isDark} toggleTheme={toggleTheme} />
             <a
                 href="/Rishikesh_Pandey_CV.pdf"
                 target="_blank"
@@ -149,7 +151,7 @@ const Navbar = () => {
               animate={{ opacity: 1, scale: 1 }}
               className="flex flex-col items-center gap-6 w-full mt-auto"
             >
-              <ThemeToggle isDark={true} toggleTheme={() => {}} />
+              <ThemeToggle isDark={isDark} toggleTheme={toggleTheme} />
               <a
                 href="/Rishikesh_Pandey_CV.pdf"
                 target="_blank"

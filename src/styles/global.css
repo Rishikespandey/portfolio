@@ -4,8 +4,22 @@
 @tailwind utilities;
 
 @layer base {
+    :root {
+        --bg-primary: #f8fafc;
+        --card-bg: #ffffff;
+        --text-primary: #0f172a;
+        --text-muted: #64748b;
+    }
+
+    .dark {
+        --bg-primary: #0f0f1a;
+        --card-bg: #1a1a2e;
+        --text-primary: #e5e7eb;
+        --text-muted: #9ca3af;
+    }
+
     body {
-        @apply bg-bgPrimary text-textPrimary overflow-x-hidden font-sans m-0 p-0;
+        @apply bg-bgPrimary text-textPrimary overflow-x-hidden font-sans m-0 p-0 transition-colors duration-300;
     }
 
     html {
