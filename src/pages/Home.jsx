@@ -17,7 +17,7 @@ const Background3D = lazy(() => import('../components/Background3D'));
 const Home = () => {
   return (
     <HelmetProvider>
-      <div className="relative min-h-screen bg-bgPrimary overflow-hidden">
+      <div className="relative min-h-screen overflow-hidden">
         <Helmet>
           <title>Rishikesh Pandey | FullStack Developer</title>
           <meta name="description" content="Frontend Developer specializing in React, UI engineering and modern web applications." />

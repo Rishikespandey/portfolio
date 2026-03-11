@@ -51,15 +51,15 @@ const Projects = () => {
             <motion.div
               key={index}
               variants={itemVariants}
-              whileHover={{ y: -8 }}
-              className="group relative bg-cardBg rounded-3xl overflow-hidden border border-white/5 shadow-xl hover:border-accent/40 hover:shadow-[0_20px_40px_-15px_rgba(139,92,246,0.2)] transition-all duration-500"
+              whileHover={{ y: -12, scale: 1.02 }}
+              className="group relative bg-white/5 backdrop-blur-md rounded-3xl overflow-hidden border border-white/10 shadow-xl hover:border-accent/50 hover:shadow-[0_0_30px_rgba(139,92,246,0.3)] transition-all duration-500"
             >
               <div 
                 className="relative h-64 sm:h-80 overflow-hidden cursor-pointer"
                 onClick={() => setSelectedProject(project)}
               >
-                <div className="absolute inset-0 bg-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-center justify-center backdrop-blur-[2px]">
-                  <span className="bg-black/60 text-white px-6 py-3 rounded-full font-semibold flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <div className="absolute inset-0 bg-accent/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-center justify-center backdrop-blur-sm">
+                  <span className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 py-3 rounded-full font-semibold flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 shadow-[0_0_15px_rgba(139,92,246,0.5)]">
                     <Eye className="w-5 h-5" /> View Details
                   </span>
                 </div>
@@ -71,7 +71,10 @@ const Projects = () => {
                 />
               </div>
 
-              <div className="p-8">
+              {/* Subtle hover glow behind the card content */}
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/0 via-accent/5 to-blue-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+              <div className="p-8 relative z-20">
                 <div className="flex justify-between items-start mb-4">
                   <h3 className="text-2xl text-white font-bold group-hover:text-accent transition-colors duration-300">
                     {project.title}
@@ -98,7 +101,7 @@ const Projects = () => {
                   {project.tags.map((tag, i) => (
                     <span
                       key={i}
-                      className="px-3 py-1 bg-white/5 text-textMuted border border-white/10 text-xs font-medium rounded-full"
+                      className="px-3 py-1 bg-accent/10 text-accentLight border border-accent/20 text-xs font-semibold rounded-full shadow-[0_0_10px_rgba(139,92,246,0.1)]"
                     >
                       {tag}
                     </span>

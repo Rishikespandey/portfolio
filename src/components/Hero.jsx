@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Download, ChevronDown, Github, Linkedin, Mail } from 'lucide-react';
 import { useTyping } from '../hooks/useTyping';
+import Button from './ui/Button';
 
 const Hero = () => {
   const roles = [
@@ -61,23 +62,25 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
           className="flex flex-col sm:flex-row gap-5 justify-center w-full sm:w-auto"
         >
-          <a
+          <Button
             href="#projects"
-            className="group flex items-center justify-center gap-2 py-4 px-8 rounded-full font-semibold text-white bg-accent hover:bg-accentLight transition-all duration-300 shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:shadow-[0_0_30px_rgba(167,139,250,0.5)] hover:-translate-y-1 w-full sm:w-auto"
+            variant="primary"
+            icon={ArrowRight}
+            className="w-full sm:w-auto px-10 py-4 text-lg"
           >
             View Projects
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </a>
+          </Button>
           
-          <a
+          <Button
             href="/Rishikesh_Pandey_CV.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center justify-center gap-2 py-4 px-8 rounded-full font-semibold text-textPrimary bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:-translate-y-1 backdrop-blur-sm w-full sm:w-auto"
+            variant="secondary"
+            icon={Download}
+            className="w-full sm:w-auto px-10 py-4 text-lg"
           >
             Download Resume
-            <Download className="w-5 h-5 group-hover:-translate-y-1 transition-transform" />
-          </a>
+          </Button>
         </motion.div>
 
         {/* Social Icons */}

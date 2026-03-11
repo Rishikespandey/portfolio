@@ -4,15 +4,16 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        bgPrimary: '#0f0f1a',
-        cardBg: '#1a1a2e',
+        bgPrimary: 'var(--bg-primary)',
+        cardBg: 'var(--card-bg)',
         accent: '#8b5cf6', // purple-500
         accentLight: '#a78bfa', // purple-400
-        textPrimary: '#e5e7eb', // gray-200
-        textMuted: '#9ca3af', // gray-400
+        textPrimary: 'var(--text-primary)',
+        textMuted: 'var(--text-muted)',
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
