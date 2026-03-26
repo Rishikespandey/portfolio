@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Github, Eye } from 'lucide-react';
-import { PROJECTS } from '../data/projects';
+import { PROJECTS } from '../data/projects.js';
 import ProjectModal from './ProjectModal';
 
 const Projects = () => {
