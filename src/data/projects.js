@@ -35,7 +35,7 @@ export const PROJECTS = [
     title: "😊 Emoji Picker Component",
     desc: "A reusable, lightweight emoji picker UI component featuring global search, categorized filtering, and text cursor insertion.",
     tags: ["Vanilla JS", "CSS3", "HTML5"],
-    img: emojiImages,
+    img: emojiImage,
     live: "#",
     repo: "https://github.com/Rishikespandey",
     features: [
